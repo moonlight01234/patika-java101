@@ -1,0 +1,59 @@
+import java.util.Scanner;
+
+public class djhglds {public static void main(String[] args) {
+    Scanner scanner=new Scanner(System.in);
+    System.out.println("birinci sayı:");
+    int sayi1=scanner.nextInt();
+
+    System.out.println("ikinci sayı:");
+    int sayi2=scanner.nextInt();
+
+    System.out.println("Sonuç:"+ebob(sayi1,sayi2));
+}
+
+    static int ebob(int first, int second) { //asal
+        int sonuc = 1;
+        int sayi1=0;
+        int sayi2=0;
+        if(first<second){
+            sayi1=first;
+            sayi2=second;
+        }
+        else{
+            sayi1=second;
+            sayi2=first;
+        }
+        for (int i = 2; i <= sayi1; i++) {
+            while (sayi1 % i == 0) {
+                if (sayi2 % i == 0) {
+                    sonuc = sonuc * i;
+                    System.out.println(sonuc);
+                }
+                sayi1 /= i;
+                sayi2/=i;
+
+            }
+
+        }
+        return sonuc;
+    }
+    Scanner scan = new Scanner(System.in);
+        int ekok = 0;
+        int max;
+
+        System.out.print("1. Sayiyi giriniz: ");
+        int sayi1 = scan.nextInt();
+        System.out.print("2. Sayiyi giriniz: ");
+        int sayi2 = scan.nextInt();
+        max = sayi1 * sayi2;
+        /* 2 sayı eger aralarında asal ise ekoku
+        çarpımlarıdır. Yanı 2 sayının ekoku maximum çarpımlarıdır.*/
+
+        for(int i = max; i > 0; i--)
+        {
+            if(i % sayi1 == 0 && i % sayi2 == 0) {
+                ekok = i;
+            }
+        }
+        System.out.println("Ekok = " + ekok);
+}
